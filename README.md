@@ -16,7 +16,7 @@ You can also just use it as a way to access GPT models from discord
 
 
 
-#**Note:**
+# **Note:**
 
 **If you cant be bothered building the source code, use the [Standalone-Release](https://github.com/injectionmethod/A.L.A.N/archive/refs/heads/main.zip)**
 
