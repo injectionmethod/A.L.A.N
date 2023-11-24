@@ -1,5 +1,5 @@
 # A.L.A.N
-**A OpenAI Chatbot for discord, allows for character customization and NRAF bypass**
+**An OpenAI Chatbot for discord, allows for character customization and NRAF bypass**
 
 A simple bot designed to handle communications from discord to openai language models and generate responses, open to customization.
 
