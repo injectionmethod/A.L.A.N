@@ -96,7 +96,7 @@ Module ALAN
     End Sub
     Public Async Function RunBotAsync() As Task
         Dim config As New Discord.WebSocket.DiscordSocketConfig()
-        config.HandlerTimeout = 380000 ' way too high
+        config.HandlerTimeout = 380000 ' way too high, adjust for later releases, if you are reading this change it, its in milliseconds.
         config.GatewayIntents = Discord.GatewayIntents.Guilds Or Discord.GatewayIntents.GuildMessages Or Discord.GatewayIntents.MessageContent
 
         Client = New Discord.WebSocket.DiscordSocketClient(config)
