@@ -161,6 +161,7 @@ Module ALAN
             End If
         End If
     End Function
+  'Most Disgusting If Else Section, Will Fix Next Release
     Function CheckCommands(s As String)
         If s.StartsWith(".ping") Then
             Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     Ping request executed")
