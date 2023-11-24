@@ -28,7 +28,7 @@ You can also just use it as a way to access GPT models from discord
 
 
 
-**Requirements:**
+# **Requirements:**
 
 - A discord account with access to developer portal (https://discord.com/developers/)
 
@@ -36,7 +36,7 @@ You can also just use it as a way to access GPT models from discord
 
 
 
-**Features:**
+# **Features:**
 
 - NRAF Character File (write character traits into the file named "character.cfg" to personalize the bot to your needs)
 
@@ -55,7 +55,7 @@ You can also just use it as a way to access GPT models from discord
 - General Security Features (heartbeat, ping, endpoint checking and geoIP commands)
 
 
-**Commands:**
+# **Commands:**
 
 - .setnew (load new personality strand from character file)
 
