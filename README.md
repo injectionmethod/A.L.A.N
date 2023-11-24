@@ -8,7 +8,7 @@ A simple bot designed to handle communications from discord to openai language m
 
 Note:
 
-The source code requires you to add the Discord.Net NuGet package [Seen here](https://discordnet.dev/guides/getting_started/installing.html?tabs=vs-install%2Ccore2-1)
+**The source code requires you to add the Discord.Net NuGet package [Seen here](https://discordnet.dev/guides/getting_started/installing.html?tabs=vs-install%2Ccore2-1)**
 
 
 Requirements:
