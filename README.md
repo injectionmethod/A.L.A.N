@@ -40,5 +40,7 @@ Features:
 - Model Changing (change the language model from openai to adjust to your needs)
   
 - Sleep Functions
+
+- Name Changing (your characters name does not need to be A.L.A.N, this can be changed from config)
   
 - General Security Features (heartbeat, ping, endpoint checking and geoIP commands)
