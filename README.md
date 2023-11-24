@@ -3,7 +3,7 @@
 
 A simple bot designed to handle communications from discord to openai language models and generate responses, open to customization.
 
-You can also just use it as a way to access models without a character from discord by setting "characterfile" to "false" in the "bot.cfg"
+You can also just use it as a way to access GPT models from discord
 
 
 **ALAN running on Windows 10:**
