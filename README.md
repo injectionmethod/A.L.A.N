@@ -1,7 +1,7 @@
 # A.L.A.N
 A OpenAI Chatbot for discord, allows for character customization and NRAF bypass
 
-ALAN running on Windows 10
+ALAN running on Windows 10:
 
 ![image](https://github.com/injectionmethod/A.L.A.N/assets/80434330/314471df-0f0d-4739-b93c-c62b6f824b2e)
 
