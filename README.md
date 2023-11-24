@@ -1,7 +1,8 @@
 # A.L.A.N
 A OpenAI Chatbot for discord, allows for character customization and NRAF bypass
 
-![image](https://github.com/injectionmethod/A.L.A.N/assets/80434330/88d58357-1c41-41c8-b081-c8ac6f130345)
+![image](https://github.com/injectionmethod/A.L.A.N/assets/80434330/314471df-0f0d-4739-b93c-c62b6f824b2e)
+
 
 A simple bot designed to handle communications from discord to openai language models and generate responses, open to customization.
 
