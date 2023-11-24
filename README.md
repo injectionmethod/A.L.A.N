@@ -7,9 +7,9 @@ A simple bot designed to handle communications from discord to openai language m
 
 Requirements:
 
-A discord account with access to developer portal (https://discord.com/developers/)
+- A discord account with access to developer portal (https://discord.com/developers/)
 
-A open-ai account with access to a api key, paid or free it doesn't matter
+- A open-ai account with access to a api key, paid or free it doesn't matter
 
 
 
