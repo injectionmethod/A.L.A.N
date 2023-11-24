@@ -6,6 +6,11 @@ A OpenAI Chatbot for discord, allows for character customization and NRAF bypass
 
 A simple bot designed to handle communications from discord to openai language models and generate responses, open to customization.
 
+Note:
+
+The source code requires you to add the Discord.Net NuGet package [Seen here](https://discordnet.dev/guides/getting_started/installing.html?tabs=vs-install%2Ccore2-1)
+
+
 Requirements:
 
 - A discord account with access to developer portal (https://discord.com/developers/)
