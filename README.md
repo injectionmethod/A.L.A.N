@@ -50,9 +50,11 @@ You can also just use it as a way to access GPT models from discord
 
 **Commands:**
 
+- .setnew (load new personality strand from character file)
+
 - .autowipe (toggles autowipe)
 
-- .wipememory (wipe current chat)
+- .wipememory (forget current chat)
   
 - .temperature (adjust randomness/accuracy example: .temperature 0.7)
 
