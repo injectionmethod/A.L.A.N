@@ -16,12 +16,12 @@ You can also just use it as a way to access GPT models from discord
 
 
 
-Note:
+**Note:**
 
 **The [source code](https://github.com/injectionmethod/A.L.A.N/blob/main/Raw%20Module%20Code/ALAN.vb) requires you to add the Discord.Net NuGet package [Seen here](https://discordnet.dev/guides/getting_started/installing.html?tabs=vs-install%2Ccore2-1)**
 
 
-Requirements:
+**Requirements:**
 
 - A discord account with access to developer portal (https://discord.com/developers/)
 
@@ -29,7 +29,7 @@ Requirements:
 
 
 
-Features:
+**Features:**
 
 - NRAF Character File (write character traits into the file named "character.cfg" to personalize the bot to your needs)
 
@@ -46,3 +46,34 @@ Features:
 - Name Changing (your characters name does not need to be A.L.A.N, this can be changed from config)
   
 - General Security Features (heartbeat, ping, endpoint checking and geoIP commands)
+
+
+**Commands:**
+
+- .autowipe (toggles autowipe)
+
+- .wipememory (wipe current chat)
+  
+- .temperature (adjust randomness/accuracy example: .temperature 0.7)
+
+- .sleep (sleeps the bot, example: sleep 380000)
+
+- .showtemp (show current temperature)
+
+- .refresh (hard restart)
+
+- .heartbeat (check if operational, no response equals dead)
+
+- .about (self explanitory)
+
+- .help (list general commands)
+
+- .model (example: model GPT_MODEL_NAME)
+
+- .listendpoints (debug information about connections)
+
+- .geoip (gets detailed information about an address, example: .geoip 127.0.0.1)
+
+- .ping (example: .ping 127.0.0.1)
+
+- base64/decodebase64 (encode/decode base64, primitive obfuscation)
