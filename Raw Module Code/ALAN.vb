@@ -40,6 +40,7 @@ Module ALAN
         RunBotAsync().GetAwaiter().GetResult()
     End Sub
 
+    'Disgusting If Else Section, Will Fix Next Release
     Sub SetVal()
         If System.IO.File.Exists($"{Environment.CurrentDirectory}/bot.cfg") Then
             For Each f As String In System.IO.File.ReadAllLines($"{Environment.CurrentDirectory}/bot.cfg")
