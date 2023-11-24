@@ -20,7 +20,7 @@ You can also just use it as a way to access GPT models from discord
 
 **The [source code](https://github.com/injectionmethod/A.L.A.N/blob/main/Raw%20Module%20Code/ALAN.vb) requires you to add the Discord.Net NuGet package [Seen here](https://discordnet.dev/guides/getting_started/installing.html?tabs=vs-install%2Ccore2-1)**
 
-**If you cant be bothered building the source code, use the [Standalone](https://github.com/injectionmethod/A.L.A.N/tree/main/ALAN-Standalone-Release)**
+**If you cant be bothered building the source code, use the [Standalone](https://github.com/injectionmethod/A.L.A.N/archive/refs/heads/main.zip)**
 
 
 **Requirements:**
