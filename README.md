@@ -25,7 +25,7 @@ You can also just use it as a way to access GPT models from discord
 
 - A discord account with access to developer portal (https://discord.com/developers/)
 
-- A open-ai account with access to a api key, paid or free it doesn't matter ([https://help.openai.com/getting-an-api-key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-api-key))
+- A open-ai account with access to an api key ([https://help.openai.com/getting-an-api-key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-api-key))
 
 
 
