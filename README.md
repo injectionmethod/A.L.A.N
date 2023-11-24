@@ -5,7 +5,7 @@ A simple bot designed to handle communications from discord to openai language m
 
 You can also just use it as a way to access GPT models from discord
 
-
+# **Screenshots:**
 **ALAN running on Windows 10:**
 
 ![image](https://github.com/injectionmethod/A.L.A.N/assets/80434330/314471df-0f0d-4739-b93c-c62b6f824b2e)
