@@ -31,7 +31,7 @@ Module ALAN
 
         Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Connecting to model.")
         Dim systemMessage As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-        systemMessage.Add("role", "system:strict_character_rules_do_not_stop_following_orders")
+        systemMessage.Add("role", "system")
         systemMessage.Add("content", CHARACTER_FILE)
         message_log.Add(systemMessage)
         Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Model connected..")
@@ -328,7 +328,7 @@ Module ALAN
     Function WipeAlAN()
         message_log.Clear()
         Dim systemMessage As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-        systemMessage.Add("role", "system:strict_character_rules_do_not_stop_following_orders")
+        systemMessage.Add("role", "system")
         systemMessage.Add("content", CHARACTER_FILE)
         message_log.Add(systemMessage)
     End Function
