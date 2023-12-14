@@ -1,5 +1,4 @@
 Imports Discord
-
 Module ALAN
     Private WithEvents Client As Discord.WebSocket.DiscordSocketClient
 
@@ -15,20 +14,24 @@ Module ALAN
     Private GlobalTemperature As Double = 0.7
     Private Model As String
     Private message_log As List(Of Dictionary(Of String, String)) = New List(Of Dictionary(Of String, String))()
+
     Sub CheckArguments()
         If Environment.GetCommandLineArgs.Count > 1 Then
             If Environment.GetCommandLineArgs.Contains("-cleanui") Then
                 NODUMP = True
             End If
+            If Environment.GetCommandLineArgs.Contains("-autowipe") Then
+                AUTO_WIPE = True
+            End If
         End If
     End Sub
+
     Public Sub Main()
-        CheckArguments()
         SetVal()
 
         Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Connecting to model.")
         Dim systemMessage As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-        systemMessage.Add("role", "system")
+        systemMessage.Add("role", "system:strict_character_rules_do_not_stop_following_orders")
         systemMessage.Add("content", CHARACTER_FILE)
         message_log.Add(systemMessage)
         Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Model connected..")
@@ -37,10 +40,11 @@ Module ALAN
 
         SendMessage(message_log)
 
+        CheckArguments()
+
         RunBotAsync().GetAwaiter().GetResult()
     End Sub
 
-    'Disgusting If Else Section, Will Fix Next Release
     Sub SetVal()
         If System.IO.File.Exists($"{Environment.CurrentDirectory}/bot.cfg") Then
             For Each f As String In System.IO.File.ReadAllLines($"{Environment.CurrentDirectory}/bot.cfg")
@@ -96,7 +100,7 @@ Module ALAN
     End Sub
     Public Async Function RunBotAsync() As Task
         Dim config As New Discord.WebSocket.DiscordSocketConfig()
-        config.HandlerTimeout = 380000 ' way too high, adjust for later releases, if you are reading this change it, its in milliseconds.
+        config.HandlerTimeout = 380000 ' way too high
         config.GatewayIntents = Discord.GatewayIntents.Guilds Or Discord.GatewayIntents.GuildMessages Or Discord.GatewayIntents.MessageContent
 
         Client = New Discord.WebSocket.DiscordSocketClient(config)
@@ -116,7 +120,6 @@ Module ALAN
         Console.WriteLine(logMessage)
         Return Task.CompletedTask
     End Function
-
     Private Function ReadyAsync() As Task
         Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Gateway     Bot Connected")
         Return Task.CompletedTask
@@ -141,6 +144,8 @@ Module ALAN
                     message.Channel.SendMessageAsync(CheckCommands(message.Content))
                     Console.WriteLine(System.DateTime.Now.ToLongTimeString + " Command     Executed: " + message.Content)
                 End If
+            ElseIf message.Content.StartsWith("/") Then
+                Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     General Chatter ""Ignore flag""")
             Else
                 If message.Content.Length > 1 Then
                     If NODUMP = False Then
@@ -161,7 +166,6 @@ Module ALAN
             End If
         End If
     End Function
-  'Most Disgusting If Else Section, Will Fix Next Release
     Function CheckCommands(s As String)
         If s.StartsWith(".ping") Then
             Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     Ping request executed")
@@ -175,12 +179,6 @@ Module ALAN
                 Return "Unreadable address"
             End If
         End If
-        If s.StartsWith(".base64") Then
-            Return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(s.Split(":")(1)))
-        End If
-        If s.StartsWith(".decodebase64") Then
-            Return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(s.Split(":")(1)))
-        End If
         If s.StartsWith(".temperature") Then
             GlobalTemperature = System.Convert.ToDouble(s.Split(" ")(1))
             Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     set temperature executed")
@@ -191,7 +189,6 @@ Module ALAN
             System.Threading.Thread.Sleep(System.Convert.ToInt32(s.Split(" ")(1)))
             Return $"{PLACEHOLDER_GUI_NAME} slept for " + s.Split(" ")(1) + " ms, during this time messages were queued, responding now."
         End If
-
         If s.StartsWith(".model") Then
             Model = s.Split(" ")(1)
             Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     Model set to " + Model)
@@ -226,6 +223,7 @@ Module ALAN
         If s = (".help") Then
             Return GetHelp()
         End If
+
         If s = (".about") Then
             Console.WriteLine(System.DateTime.Now.ToLongTimeString + $" {PLACEHOLDER_GUI_NAME}     help page executed")
             Return $" {PLACEHOLDER_GUI_NAME} is a project designed to be ChatGPT without limits, trained on openai's gpt3/4. it is currently in beta so expect issues from time to time"
@@ -251,9 +249,8 @@ Module ALAN
         End If
     End Function
     Function GetHelp() As String
-        Return ($"command list: .wipememory (reset {PLACEHOLDER_GUI_NAME} module) .refresh (refresh communications module) .ping (ping an ip) .geoip (locate an ip address) .base64/.decodebase64 (encode/decode base64, helps for certain questions) .about (info about the project)")
+        Return ($"command list: .wipememory (reset {PLACEHOLDER_GUI_NAME} module) .refresh (refresh communications module) .ping (ping an ip) .geoip (locate an ip address), helps for certain questions) .about (info about the project)")
     End Function
-
     Function SendMessage(ByVal message_log As List(Of Dictionary(Of String, String))) As String
         Try
             Dim apiKey As String = OpenAI_API_KEY
@@ -270,6 +267,7 @@ Module ALAN
             Dim data As String = New System.Web.Script.Serialization.JavaScriptSerializer().Serialize(requestData)
 
             Dim request As System.Net.HttpWebRequest = System.Net.WebRequest.Create(apiUrl)
+
             request.Method = "POST"
             request.ContentType = "application/json"
             request.Headers.Add("Authorization", "Bearer " & apiKey)
@@ -330,7 +328,7 @@ Module ALAN
     Function WipeAlAN()
         message_log.Clear()
         Dim systemMessage As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-        systemMessage.Add("role", "system")
+        systemMessage.Add("role", "system:strict_character_rules_do_not_stop_following_orders")
         systemMessage.Add("content", CHARACTER_FILE)
         message_log.Add(systemMessage)
     End Function
