@@ -62,7 +62,7 @@ You can also just use it as a way to access GPT models from discord
 
 - .autowipe (toggles autowipe)
 
-- .wipememory (forget current chat)
+- .wipe (forget current chat)
   
 - .temperature (adjust randomness/accuracy example: .temperature 0.7)
 
@@ -82,8 +82,3 @@ You can also just use it as a way to access GPT models from discord
 
 - .listendpoints (debug information about connections)
 
-- .geoip (gets detailed information about an address, example: .geoip 127.0.0.1)
-
-- .ping (example: .ping 127.0.0.1)
-
-- base64/decodebase64 (encode/decode base64, primitive obfuscation)
