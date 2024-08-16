@@ -53,7 +53,6 @@ You can also just use it as a way to access GPT models from discord
 
 - Name Changing (your characters name does not need to be A.L.A.N, this can be changed from config)
   
-- General Security Features (heartbeat, ping, endpoint checking and geoIP commands)
 
 
 # **Commands:**
